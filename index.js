@@ -4,7 +4,6 @@ var mediaRecorder;
 var audioChunks = [];
 var audioBlob;
 window.AudioContext = window.AudioContext || window.webkitAudioContext;
-let audioContext = new AudioContext();
 let buffer;
 let source;
 let timeint;
@@ -13,11 +12,11 @@ let filesize;
 
 function humanFileSize(fileSizeInBytes) {
     var i = -1;
-    var byteUnits = ['kb', 'mb', 'gb', 'tb'];
+    var byteUnits = ['kB', 'MB', 'GB', 'TB'];
     do {
-        fileSizeInBytes = fileSizeInBytes / 1024;
+        fileSizeInBytes = fileSizeInBytes / 1000;
         i++;
-    } while (fileSizeInBytes > 1024);
+    } while (fileSizeInBytes > 1000);
 
     return Math.max(fileSizeInBytes, 0.1).toFixed(1) + byteUnits[i];
 }
@@ -145,16 +144,19 @@ function stopr() {
     mediaRecorder.addEventListener("stop", () => {
         audioBlob = new Blob(audioChunks);
         audioBlob.arrayBuffer()
-            .then(buf => audioContext.decodeAudioData(buf, audioBuffer => {
-                buffer = audioBuffer;
-                url = encodemp3(buffer.getChannelData(0));
-                $(".time").html(`${hms2(buffer.duration)} <span class="small text-muted">${filesize} mp3</span>`);
-                $(".spinner").hide();
-                $(".record-button").show().html("<i class=\"fas fa-microphone\"></i>")[0].addEventListener('click', record);
-                $(".play-button").show()[0].addEventListener('click', play);
-                $(".download-button").show().attr("href", url);
+            .then(buf => {
+                let audioContext = new AudioContext();
+                return audioContext.decodeAudioData(buf, audioBuffer => {
+                    buffer = audioBuffer;
+                    url = encodemp3(buffer.getChannelData(0));
+                    $(".time").html(`${hms2(buffer.duration)} <span class="small text-muted">${filesize} mp3</span>`);
+                    $(".spinner").hide();
+                    $(".record-button").show().html("<i class=\"fas fa-microphone\"></i>")[0].addEventListener('click', record);
+                    $(".play-button").show()[0].addEventListener('click', play);
+                    $(".download-button").show().attr("href", url);
 
-            }));
+                });
+            });
     });
     mediaRecorder.stop();
 }

@@ -11,8 +11,12 @@
     <link rel="stylesheet" type="text/css" href="../childpages.css"/>
     <link rel="stylesheet" type="text/css" href="index.css"/>
 
+    <script src="../libs/fontawesome/solid.min.js" type="module"></script>
+    <script src="../libs/fontawesome/fontawesome.min.js" type="module"></script>
+
     <link rel="stylesheet" href="index.css"/>
-    <script src="jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="loading.css"/>
+    <script src="jquery.min.js"></script>
     <script src="acmp.js"></script>
     <script src="lame.min.js"></script>
     <script src="index.js"></script>
@@ -39,10 +43,10 @@
     <div class="text-center">
         <div class="glass d-inline-block text-center px-4 py-2">
             <h1 class="text-center display-1 record">
-                <span class="cool-link record-button"><i class="fas fa-microphone"></i></span>
-                <span class="cool-link play-button"><i class="fas fa-play"></i></span>
-                <a download="vox.mp3" class="cool-link download-button"><i class="fas fa-download"></i></a>
-                <div class="spinner">
+                <span class="cool-link record-button button"><i class="fas fa-microphone"></i></span>
+                <span class="cool-link play-button button" style="display:none;"><i class="fas fa-play"></i></span>
+                <a download="vox.mp3" class="cool-link download-button button"  style="display:none;"><i class="fas fa-download"></i></a>
+                <div class="spinner" style="display:none;">
                     <div class="cube1"></div>
                     <div class="cube2"></div>
                 </div>
