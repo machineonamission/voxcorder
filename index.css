@@ -1,0 +1,38 @@
+.header img {
+    width: 10%;
+}
+
+@media (orientation: portrait) and (max-width: 400px) {
+    .display-1 {
+        font-size: 2em;
+    }
+}
+
+@media (orientation: portrait) {
+    .header img {
+        width: 40%;
+    }
+}
+
+.cool-link {
+    color: #fff
+}
+
+.cool-link:hover {
+    text-decoration: none;
+    color: #aaa;
+    cursor: pointer;
+}
+
+.header h3, .header h5 {
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+
+.record {
+    margin: 100px auto 20px;
+}
+
+.play-button, .spinner, .download-button {
+    display: none;
+}
