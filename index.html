@@ -1,70 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8"/>
-    <title>Voxcorder - Rēticīvis</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="description" content="Voxcorder - Rēticīvis"/>
-
-    <link rel="stylesheet" type="text/css" href="../libs/bootstrap/css/bootstrap.min.css"/>
-    <link rel="stylesheet" type="text/css" href="../index.css"/>
-    <link rel="stylesheet" type="text/css" href="../childpages.css"/>
-    <link rel="stylesheet" type="text/css" href="index.css"/>
-
-    <script src="../libs/fontawesome/solid.min.js" type="module"></script>
-    <script src="../libs/fontawesome/fontawesome.min.js" type="module"></script>
-
+---
+layout: child
+title: Voxcorder
+description:
+head: |
+    <script src="/libs/fontawesome/solid.min.js" type="module"></script>
+    <script src="/libs/fontawesome/fontawesome.min.js" type="module"></script>
     <link rel="stylesheet" href="index.css"/>
     <link rel="stylesheet" href="loading.css"/>
     <script src="jquery.min.js"></script>
     <script src="acmp.js"></script>
     <script src="lame.min.js"></script>
     <script src="index.js"></script>
+---
 
-    <link rel="stylesheet" type="text/css" href="../assets/fonts/JetBrainsMono/jetbrainsmono.css"/>
-    <link rel="stylesheet" type="text/css" href="../assets/fonts/AtkinsonHyperlegible/atkinsonhyperlegible.css"/>
-
-    <link rel="icon" href="../assets/reticivis_just_logo.svg">
-
-    <meta property="og:title" content="Voxcorder"/>
-    <meta property="og:description" content="Voxcorder - Rēticīvis"/>
-    <meta property="og:image" content="https://reticivis.net/assets/reticivis_just_logo.png"/>
-    <meta content="#ffffff" data-react-helmet="true" name="theme-color" />
-    <meta name="twitter:title" content="Voxcorder"/>
-    <meta name="twitter:description" content="Voxcorder - Rēticīvis"/>
-    <meta name="twitter:image" content="https://reticivis.net/assets/reticivis_just_logo.png"/>
-    <meta name="darkreader-lock">
-</head>
-<body>
-<div class="header">
-    <a class="afix" href="../">
-        <img class="headerimg" src="../assets/reticivis_just_logo.svg" alt="Reticivis">
-        <h3>Voxcorder</h3>
-    </a>
-</div>
-<div class="bg"></div>
-<div class="container-fluid">
-    <div class="text-center">
-        <div class="glass d-inline-block text-center px-4 py-2">
-            <h1 class="text-center display-1 record">
-                <span class="cool-link record-button button"><i class="fas fa-microphone"></i></span>
-                <span class="cool-link play-button button" style="display:none;"><i class="fas fa-play"></i></span>
-                <a download="vox.mp3" class="cool-link download-button button"  style="display:none;"><i class="fas fa-download"></i></a>
-                <div class="spinner" style="display:none;">
-                    <div class="cube1"></div>
-                    <div class="cube2"></div>
-                </div>
-            </h1>
-            <h2 class="text-center time"></h2>
-        </div>
+<h1 class="text-center display-1 record">
+    <span class="cool-link record-button button"><i class="fas fa-microphone"></i></span>
+    <span class="cool-link play-button button" style="display:none;"><i class="fas fa-play"></i></span>
+    <a download="vox.mp3" class="cool-link download-button button" style="display:none;"><i class="fas fa-download"></i></a>
+    <div class="spinner" style="display:none;">
+        <div class="cube1"></div>
+        <div class="cube2"></div>
     </div>
-</div>
-
-<div class="footer">
-    <p class="mb-0">&copy; 2024 Rēticīvis · <a href="../ack">Acknowledgements</a> · <a href="https://github.com/reticivis-net/voxcorder">Source</a></p>
-</div>
-<!--<script src="libs/bootstrap/js/bootstrap.bundle.min.js"></script>-->
-<!--<script src="libs/fontawesome/solid.min.js" type="module"></script>-->
-<!--<script src="libs/fontawesome/fontawesome.min.js" type="module"></script>-->
-</body>
-</html>
+</h1>
+<h2 class="text-center time"></h2>
