@@ -119,7 +119,7 @@ function play() {
         $(".time").html(hms(audioContext.currentTime) + " / " + hms(buffer.duration));
     }, 100);
     source.onended = function () {
-        let button = $(".play-button").html("<i class=\"fas fa-play\"></i>")[0];
+        let button = $(".play-button").html("<span class='material-symbols-rounded'>play_arrow</span>")[0];
         button.removeEventListener("click", stopa);
         button.addEventListener('click', play);
         $(".record-button").show();
@@ -128,7 +128,7 @@ function play() {
         $(".time").html(`${hms2(buffer.duration)} <span class="small text-muted">${filesize} mp3</span>`);
         playing = false;
     };
-    let button = $(".play-button").html("<i class=\"fas fa-stop\"></i>")[0];
+    let button = $(".play-button").html("<span class='material-symbols-rounded'>stop</span>")[0];
     $(".record-button").hide();
     button.removeEventListener("click", play);
     button.addEventListener('click', stopa);
@@ -151,7 +151,7 @@ function stopr() {
                     url = encodemp3(buffer.getChannelData(0));
                     $(".time").html(`${hms2(buffer.duration)} <span class="small text-muted">${filesize} mp3</span>`);
                     $(".spinner").hide();
-                    $(".record-button").show().html("<i class=\"fas fa-microphone\"></i>")[0].addEventListener('click', record);
+                    $(".record-button").show().html("<span class='material-symbols-rounded'>mic</span>")[0].addEventListener('click', record);
                     $(".play-button").show()[0].addEventListener('click', play);
                     $(".download-button").show().attr("href", url);
 
@@ -169,7 +169,7 @@ function micready(stream) {
         audioChunks.push(event.data);
     });
     $(".spinner").hide();
-    $(".record-button").html("<i class=\"fas fa-stop\"></i>").show()[0].addEventListener('click', stopr);
+    $(".record-button").html("<span class='material-symbols-rounded'>stop</span>").show()[0].addEventListener('click', stopr);
     recording = true;
     var start = Date.now() / 1000;
     timeint = setInterval(function () {

@@ -3,8 +3,6 @@ layout: child
 title: Voxcorder
 description: A simple web-based audio recorder.
 head: |
-    <script src="/libs/fontawesome/solid.min.js" type="module"></script>
-    <script src="/libs/fontawesome/fontawesome.min.js" type="module"></script>
     <link rel="stylesheet" href="index.css"/>
     <link rel="stylesheet" href="loading.css"/>
     <script src="jquery.min.js"></script>
@@ -14,9 +12,9 @@ head: |
 ---
 
 <h1 class="text-center display-1 record">
-    <span class="cool-link record-button button"><i class="fas fa-microphone"></i></span>
-    <span class="cool-link play-button button" style="display:none;"><i class="fas fa-play"></i></span>
-    <a download="vox.mp3" class="cool-link download-button button" style="display:none;"><i class="fas fa-download"></i></a>
+    <span class="cool-link record-button button">{% include icon.liquid name="mic" %}</span>
+    <span class="cool-link play-button button" style="display:none;">{% include icon.liquid name="play_arrow" %}</span>
+    <a download="vox.mp3" class="cool-link download-button button" style="display:none;">{% include icon.liquid name="download" %}</a>
     <div class="spinner" style="display:none;">
         <div class="cube1"></div>
         <div class="cube2"></div>
